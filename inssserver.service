@@ -1,0 +1,16 @@
+[Unit]
+Description=LinuxGSM Insurgency: Sandstorm Dedicated Game Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+User=inssserver
+WorkingDirectory=/home/inssserver
+RemainAfterExit=yes
+ExecStart=/home/inssserver/inssserver start
+ExecStop=/home/inssserver/inssserver stop
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
